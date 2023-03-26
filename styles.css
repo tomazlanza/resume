@@ -1,12 +1,27 @@
 /* commenting in css */  
 
-header{
-    display: flex;
-    flex-direction: row;
-    -ms-flex-align: stretch;
-    border-bottom: solid black 0.2rem;
+body {
+    background-color: lightgray;
 
 }
+
+
+header{
+    display: flex;
+    justify-content: space-around;
+    border-bottom: solid black 0.2rem;
+    
+}
+
+#header-contacts {
+    display: flex;
+    flex-direction: column;
+}
+
+.contact{
+    display: flex;
+}
+
 
 .div-main {
     border-top: solid blue 0.1rem;
