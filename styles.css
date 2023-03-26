@@ -1,0 +1,21 @@
+/* commenting in css */  
+
+header{
+    display: flex;
+    flex-direction: row;
+    -ms-flex-align: stretch;
+    border-bottom: solid black 0.2rem;
+
+}
+
+.div-main {
+    border-top: solid blue 0.1rem;
+}
+
+footer {
+    background-color: aquamarine;
+
+}
+
+
+
