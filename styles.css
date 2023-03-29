@@ -1,31 +1,34 @@
 /* applied to all elements and body [i've heard the settings below are good practice]*/
 
-/** {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-  }*/
+* {
+    box-sizing: border-box; /*assures every element does not exceed its specified width and height*/
+  }
 
 body {
     display: flex;
-    flex-direction: column;
+    flex-direction: column;    
     background-color: lightgray;
 }
+
 
 /* header */
 header { 
     display: flex;
     flex-direction: column;
     justify-content: center;
-    position: fixed;
-    z-index: 100;
+    position: fixed; /* fixes the header at the top of the page */
+    top: 0; /*assures the header is 'touching' the top border of the page*/
+    left: 0; /*assures the header is 'touching' the left border of the page*/
+    z-index: 100; 
     width: 100%;
+    background-color: lightgray;
+    border-top:  solid black 0.2rem;;
     border-bottom: solid black 0.2rem;
 }
 
 #header-title {
     margin: auto;
-    font-family: fantasy, monospace, Verdana, Geneva, Tahoma, sans-serif;
+    font-family: fantasy, monospace;
 }
 
 #photo-and-contact-holder{
@@ -55,12 +58,20 @@ main {
 
 .div-main {
     border-top: solid blue 0.1rem;
+    width: 100%;
+    left: 0;
+
 }
 
 /*footer*/
 footer {
     background-color: aquamarine;
 
+}
+
+
+p:not(contact) {
+    font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
 }
 
 
