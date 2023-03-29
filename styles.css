@@ -5,8 +5,6 @@
   }
 
 body {
-    display: flex;
-    flex-direction: column;    
     background-color: lightgray;
 }
 
@@ -26,9 +24,24 @@ header {
     border-bottom: solid black 0.2rem;
 }
 
+#page-wrapper {
+    max-width: 60%;
+    margin: 0 auto;
+    margin-top: 23%; /* chatgpt: adjust this value to match the height of your header element and prevent overlapping */
+}
+
+#header-holder {
+    display: flex;
+    justify-content: center;
+    width: 100%;
+    border-bottom: solid black 0.05rem;
+    background-color: darkgrey;
+}
+
 #header-title {
-    margin: auto;
     font-family: fantasy, monospace;
+    border: solid black;
+    border-radius: 10%;
 }
 
 #photo-and-contact-holder{
@@ -36,18 +49,35 @@ header {
     justify-content: space-around;
 }
 
-#header-contacts {
+#header-contacts { /* or should I call you 'contacts-holder'?*/
     border: solid black 0.1rem;
     right: 0;
+    width: auto;
 }
 
-.contact{
+.contact {
 
 }
 
 img {
     border-radius: 70%; 
 }
+
+#menu-wrapper {
+    width: 100%;
+    border: solid purple 0.1rem;
+    background-color: darkgray;
+}
+
+#menu-wrapper ul {
+    display: flex;
+    justify-content: space-around;
+    list-style-type: none;
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+    color: purple;
+    background-color: darkgrey;
+}
+
 
 /*main*/
 
@@ -66,7 +96,6 @@ main {
 /*footer*/
 footer {
     background-color: aquamarine;
-
 }
 
 
@@ -82,7 +111,7 @@ a:link { text-decoration: none; }
 
 a:visited { text-decoration: none; }
 
-a:hover { text-decoration: none; background-color: pink;}
+a:hover { text-decoration: none; background-color: yellow;}
 
 a:active { text-decoration: none; }
 
