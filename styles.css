@@ -1,8 +1,15 @@
 /*----------------------- applied to all elements or only the body -----------------------------*/
 
-* {box-sizing: border-box;} /*assures every element does not exceed its specified width and height*/
+* {
+    box-sizing: border-box;
+} /*assures every element does not exceed its specified width and height*/
   
-body {background-color: lightgray;}
+body {
+    background-color: lightgray;
+    /* display: flex;
+    flex-direction: column;
+    justify-content: center;*/
+}
 
 
 
@@ -27,8 +34,8 @@ header {
 
 #title-holder {
     display: flex;
-    justify-content: center; /*centered flexbox is for centering the title and its border*/
-    align-items: center;
+    justify-content: center; /*centered flexbox is for centering the title and its border on the y-axis (which is the main axis)*/
+    align-items: center; /*centered flexbox is for centering the title and its border on the cross axis (which is the x-axis)*/
     border-bottom: solid black 0.05rem;
     background-color: darkgrey;
     height: 20%;
@@ -38,6 +45,7 @@ header {
     display: flex;
     justify-content: center; /*centered flexbox is for centering the title text inside of its border*/
     align-items: center;
+    overflow: hidden;
     font-family: fantasy, monospace;
     border: solid black;
     border-radius: 10%;
@@ -70,8 +78,7 @@ header {
 #contacts-holder { 
     border-left: solid black 0.1rem;
     width: 50vh;
-    right: 0;
-    border: solid 0.1rem;
+    
 }
 
 #contacts-holder ul {
@@ -119,6 +126,8 @@ header {
     display: flex;
     justify-content: space-around;
     align-items: center;
+    position: absolute;
+    bottom: 0;;
     list-style-type: none;
     font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
     color: purple;
@@ -130,12 +139,13 @@ header {
 
 #page-wrapper {
     max-width: 60%;
+    position: relative;
+    top: 230px;
     margin: 0 auto;
-    margin-top: 23%; /* chatgpt: adjust this value to match the height of your header element and prevent overlapping */
+    
 }
 
 main {
-    position: relative;
     z-index: 0;
 }
 
