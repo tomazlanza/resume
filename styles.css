@@ -50,7 +50,7 @@ header {
 
 #photo-and-contacts-holder{    
     display: flex;
-    justify-content: right; /*flexbox is for displaying img and contacts horizontaly inside their parent (that has a column direction)*/
+    justify-content: space-around; /*flexbox is for displaying img and contacts horizontaly inside their parent (that has a column direction)*/
     height: 68.5%;    
 }
 
@@ -69,8 +69,9 @@ header {
 
 #contacts-holder { 
     border-left: solid black 0.1rem;
-    width: 33vh;
+    width: 50vh;
     right: 0;
+    border: solid 0.1rem;
 }
 
 #contacts-holder ul {
@@ -82,18 +83,20 @@ header {
 #contacts-holder ul li {
     list-style-type: none;
     font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    width: 100%;
 }
 
 #contacts-holder ul a { /*for having the links for the contacts and the social media logos being side-by-side*/
     display: flex;
     justify-content: left;
     font-size: large;
-    padding-bottom: 0.05%;
+    padding-bottom: 0.5%;
+    
 }
 
+
 .logo {
-    max-width: 3.5%;
-    
+    max-width: 6.5%;
     border-radius: 30%;
     border: solid 0.1rem black;
 }
