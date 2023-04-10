@@ -1,15 +1,8 @@
 /*----------------------- applied to all elements or only the body -----------------------------*/
 
-* {
-    box-sizing: border-box;
-} /*assures every element does not exceed its specified width and height*/
+* {box-sizing: border-box;} /*assures every element does not exceed its specified width and height*/
   
-body {
-    background-color: lightgray;
-    /* display: flex;
-    flex-direction: column;
-    justify-content: center;*/
-}
+body {background-color: lightgray;}
 
 
 
@@ -25,8 +18,8 @@ header {
     z-index: 100; 
     width: 100%;
     height: 30vh;
+    overflow: scroll;
     background-color: lightgray;
-    border-top:  solid black 0.2rem;;
     border-bottom: solid black 0.2rem;
 }
 
@@ -58,12 +51,17 @@ header {
 
 #photo-and-contacts-holder{    
     display: flex;
-    justify-content: space-around; /*flexbox is for displaying img and contacts horizontaly inside their parent (that has a column direction)*/
-    height: 68.5%;    
+    justify-content: space-evenly; /*flexbox is for displaying img and contacts horizontaly inside their parent (that has a column direction)*/
+    height: 68.5%; 
 }
 
 
 /*---- photo ----*/
+
+#photo-holder {
+    padding-left: 15%;
+    height: 100%;
+}
 
 #photo-holder img {
     border-radius: 75%; 
@@ -77,33 +75,31 @@ header {
 
 #contacts-holder { 
     border-left: solid black 0.1rem;
-    width: 50vh;
-    
+    height: 100%;
+    margin-left: 25%;
+    overflow: hidden;
 }
 
 #contacts-holder ul {
     display: flex;
     flex-direction: column;
-    justify-content: left;
-}
-
-#contacts-holder ul li {
-    list-style-type: none;
     font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    list-style-type: none;
+    height: 100%;
     width: 100%;
+    margin-bottom: 20%;
 }
 
 #contacts-holder ul a { /*for having the links for the contacts and the social media logos being side-by-side*/
     display: flex;
     justify-content: left;
+    align-items: center;
     font-size: large;
     padding-bottom: 0.5%;
-    
 }
 
-
 .logo {
-    max-width: 6.5%;
+    max-width: 5%;
     border-radius: 30%;
     border: solid 0.1rem black;
 }
@@ -126,8 +122,6 @@ header {
     display: flex;
     justify-content: space-around;
     align-items: center;
-    position: absolute;
-    bottom: 0;;
     list-style-type: none;
     font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
     color: purple;
@@ -139,10 +133,8 @@ header {
 
 #page-wrapper {
     max-width: 60%;
-    position: relative;
-    top: 230px;
     margin: 0 auto;
-    
+    padding-top: 30vh;
 }
 
 main {
