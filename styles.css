@@ -1,8 +1,8 @@
 /*----------------------- applied to all elements or only the body -----------------------------*/
 
-* {box-sizing: border-box;} /*assures every element does not exceed its specified width and height*/
+* {box-sizing: border-box; border: 1px solid black;} /*assures every element does not exceed its specified width and height*/
   
-body {background-color: lightgray;}
+body {background: linear-gradient(to left, lightgray 5%, darkgray 20%, lightgray 80%, darkgray 95%, lightgray 100%);}
 
 
 /*-------------------------------------- entire header -----------------------------------------*/
@@ -68,7 +68,7 @@ header {
     height: 120%;
 }
 
-#photo-holder img:hover {height: 110%;}
+#photo-holder img:hover {height: 117%;}
 
 
 /*---- contacts ----*/
@@ -78,7 +78,7 @@ header {
     overflow: hidden;
 }
 
-#contacts-holder ul {
+#contacts-holder address ul {
     display: flex;
     flex-direction: column;
     font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
@@ -86,57 +86,81 @@ header {
     margin-top: -0.01%;
 }
 
-#contacts-holder ul a { /*for having the links for the contacts and the social media logos being side-by-side*/
+#contacts-holder address ul a { /*for having the links for the contacts and the social media logos being side-by-side*/
     display: flex;
     justify-content: left;
     align-items: center;
     font-size: large;
-    padding-bottom: 0.5%;
+    font-style: normal;
+    padding-bottom: 0.3%;
 }
 
-#contacts-holder ul a:first-of-type {padding-top: 0.5%;}
+#contacts-holder address ul li:hover {text-decoration: none; font-weight: bold;}
 
-#contacts-holder ul li:hover {text-decoration: none; font-weight: bold;}
-
-.social-media {padding-left: 1%;}
+.contact {padding-left: 1%;}
 
 .logo {
-    max-width: 5%;
+    max-width: 4%;
     border: solid 0.1rem black;
     border-radius: 30%;
 }
 
+#email-icon {
+    max-width: 4%;
+}
+
+#whatsapp-icon {
+    max-width: 4%;
+}
 
 /*----- menu -----*/
 
 #menu-holder {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
     width: 100%;
     border-top: solid purple 0.1rem;
     background-color: darkgray;
-    font-weight: bold;
     height: 10%;
-    z-index: 10;
 }
 
 #menu-holder ul {
     display: flex;
     justify-content: space-around;
     align-items: center;
+    width: 100%;
     list-style-type: none;
     font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
-    font-size: small;
+    font-size: medium;
+    font-weight: bold;
     color: purple;
-    background-color: darkgrey;
-    margin-bottom: 1%;
 }
+
+.inner-link:hover {background-color: linear-gradient();} /*----- links targeting contents of the same page -----*/
 
 
 /*---------------------------------------------main-------------------------------------------------*/
 
-#page-wrapper {
+#main-page-wrapper {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+#content-wrapper {
+    width: 60%;
     max-width: 60%;
     margin: 0 auto;
     padding-top: 30vh;
+    border-left: solid black 0.1rem;
+    border-right: solid black 0.1rem;
+}
+
+.ornament-column {
+    max-width: 20%;
+    background-color: red;
+    border-top: solid black 0.01rem;
 }
 
 main {
@@ -150,15 +174,40 @@ main {
 }
 
 .div-main:last-of-type {
-    border-top: solid black 0.3rem;
-    width: 100vw;
+    border-top: none ;
+    width: 100%;
+}
+
+#profile p {
+    padding-left: 2%;    
+}
+
+h1, h2 {
+    padding-left: 1%;
 }
 
 /*footer*/
-footer {
-    background-color: aquamarine;
+
+.footer-div {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    border-top: solid black 0.2rem;
+    width: 100%;
+    background-color: darkgray;
 }
 
+footer {
+    height: auto;
+    width: 100%;
+    bottom: 0;
+    font-weight: lighter;
+}
+
+footer a {color: purple;}
+
+footer a:hover {font-weight: bold;}
 
 p:not(contact) {font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;}
 
