@@ -1,8 +1,24 @@
+/* ------------------------------ CSS variables declarations------------------------------------*/
+
+:root {
+    --main-bg-color: lightgray;
+    --second-bg-color: darkgray;
+    --main-details-color: rgb(128, 0, 128);
+    --second-details-color: blue;
+  }
+
+
+
 /*----------------------- applied to all elements or only the body -----------------------------*/
 
-* {box-sizing: border-box; border: 1px solid black;} /*assures every element does not exceed its specified width and height*/
+* {box-sizing: border-box;} /*assures every element does not exceed its specified width and height*/
   
-body {background: linear-gradient(to left, lightgray 5%, darkgray 20%, lightgray 80%, darkgray 95%, lightgray 100%);}
+body {
+    background: var(--main-bg-color); 
+    width: 100%;
+
+}
+
 
 
 /*-------------------------------------- entire header -----------------------------------------*/
@@ -17,10 +33,11 @@ header {
     z-index: 100; 
     width: 100%;
     height: 32vh;
-    overflow: scroll;
-    background-color: lightgray;
+    overflow: hidden;
+    background-color: var(--main-bg-color);
     border-bottom: solid black 0.2rem;
 }
+
 
 /*-------------------- title --------------------*/
 
@@ -29,7 +46,7 @@ header {
     justify-content: center; /*centered flexbox is for centering the title and its border on the y-axis (which is the main axis)*/
     align-items: center; /*centered flexbox is for centering the title and its border on the cross axis (which is the x-axis)*/
     border-bottom: solid black 0.05rem;
-    background-color: darkgrey;
+    background-color: var(--second-bg-color);
     height: 21.5%;
 }
 
@@ -58,13 +75,15 @@ header {
 /*---- photo ----*/
 
 #photo-holder {
-    padding-left: 20%; /*---- for moving the img inside its container without affecting the other in-line element ----*/
+    display: flex;
+    justify-content: center;
+    width: 50%;
     height: 100%;
 }
 
 #photo-holder img {
     border-radius: 75%;
-    border: solid 0.2rem purple;
+    border: solid 0.2rem var(--main-details-color);
     height: 120%;
 }
 
@@ -72,19 +91,17 @@ header {
 
 
 /*---- contacts ----*/
-
-#contacts-holder {
-    border-left: solid black 0.1rem;
-    overflow: hidden;
-}
-
-#contacts-holder address ul {
+  
+#contacts-holder {    
     display: flex;
     flex-direction: column;
-    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
-    list-style-type: none;
-    margin-top: -0.01%;
+    justify-content: center; /*in order to its child [address] be to centered*/
+    border-left: solid black 0.1rem;
+    overflow: hidden;
+    width: 35%;;
 }
+
+#contacts-holder address ul {padding: 0.4% 0 0 0.4%;}
 
 #contacts-holder address ul a { /*for having the links for the contacts and the social media logos being side-by-side*/
     display: flex;
@@ -92,26 +109,30 @@ header {
     align-items: center;
     font-size: large;
     font-style: normal;
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    list-style-type: none;
     padding-bottom: 0.3%;
+    margin: 0;
 }
 
 #contacts-holder address ul li:hover {text-decoration: none; font-weight: bold;}
 
-.contact {padding-left: 1%;}
+.contact {padding-left: 0.5%;} /*separates the contacts texts from the icons*/
 
 .logo {
-    max-width: 4%;
+    max-width: 5%;
     border: solid 0.1rem black;
     border-radius: 30%;
 }
 
 #email-icon {
-    max-width: 4%;
+    max-width: 5%;
 }
 
 #whatsapp-icon {
-    max-width: 4%;
+    max-width: 5%;
 }
+
 
 /*----- menu -----*/
 
@@ -120,8 +141,8 @@ header {
     justify-content: space-around;
     align-items: center;
     width: 100%;
-    border-top: solid purple 0.1rem;
-    background-color: darkgray;
+    border-top: solid var(--main-details-color) 0.1rem;
+    background-color: var(--second-bg-color);
     height: 10%;
 }
 
@@ -132,12 +153,13 @@ header {
     width: 100%;
     list-style-type: none;
     font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
-    font-size: medium;
+    font-size: large;
     font-weight: bold;
-    color: purple;
+    color: var(--main-details-color);
 }
 
-.inner-link:hover {background-color: linear-gradient();} /*----- links targeting contents of the same page -----*/
+.inner-link:hover {text-shadow: 0.5px 1px 3px #B300B3;} /*----- links targeting contents of the same page -----*/
+
 
 
 /*---------------------------------------------main-------------------------------------------------*/
@@ -146,21 +168,18 @@ header {
     display: flex;
     flex-direction: column;
     align-items: center;
+    margin: 0;
+    padding: 0;
 }
 
 #content-wrapper {
-    width: 60%;
-    max-width: 60%;
+    width: 70%;
+    max-width: 70%;
     margin: 0 auto;
     padding-top: 30vh;
     border-left: solid black 0.1rem;
     border-right: solid black 0.1rem;
-}
-
-.ornament-column {
-    max-width: 20%;
-    background-color: red;
-    border-top: solid black 0.01rem;
+    box-shadow: 5px -10px 8px 5px #3e3e3e;
 }
 
 main {
@@ -168,7 +187,7 @@ main {
 }
 
 .div-main {
-    border-top: solid blue 0.1rem;
+    border-top: solid var(--second-details-color) 0.1rem;
     width: 100%;
     left: 0;
 }
@@ -186,7 +205,7 @@ h1, h2 {
     padding-left: 1%;
 }
 
-/*footer*/
+/*--------------footer-------------*/
 
 .footer-div {
     display: flex;
@@ -195,7 +214,10 @@ h1, h2 {
     align-items: center;
     border-top: solid black 0.2rem;
     width: 100%;
-    background-color: darkgray;
+    background-color: var(--second-bg-color);
+    border: 1px solid red;
+    left: 0;
+    bottom: 0;
 }
 
 footer {
@@ -205,7 +227,7 @@ footer {
     font-weight: lighter;
 }
 
-footer a {color: purple;}
+footer a {color: var(--main-details-color);}
 
 footer a:hover {font-weight: bold;}
 
@@ -213,7 +235,7 @@ p:not(contact) {font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, san
 
 
 
-/*----------------------------- applied to hyper-links -------------------------------------------------*/
+/*------------------------------- applied to all hyper-links ------------------------------------------------*/
 
 a:link { text-decoration: none; }
 
@@ -222,17 +244,12 @@ a:visited { text-decoration: none;}
 a:active { text-decoration: none;}
 
 
-
-
 /*-------------------------------- media-query ------------------------------------------------------*/
 
 @media() {
   
 
 }
-
-
-
 
 
 
