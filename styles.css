@@ -1,237 +1,259 @@
-/* ------------------------------ CSS variables declarations------------------------------------*/
+/* ------------------------------ CSS variables declarations-------------------------------------*/
 
 :root {
     --main-bg-color: lightgray;
     --second-bg-color: darkgray;
     --main-details-color: rgb(128, 0, 128);
     --second-details-color: blue;
-  }
-
-
-
-/*----------------------- applied to all elements or only the body -----------------------------*/
-
-* {box-sizing: border-box;} /*assures every element does not exceed its specified width and height*/
-  
-body {
-    background: var(--main-bg-color); 
-    width: 100%;
-
 }
 
 
 
-/*-------------------------------------- entire header -----------------------------------------*/
+/*--------------------------------- Universal and type selectors --------------------------------*/
+
+* {
+  box-sizing: border-box; /*assures every element does not exceed its specified width and height*/
+} 
+  
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  background: var(--main-bg-color); 
+  width: 100vw;
+  margin: 0;
+}
+
+address {
+  display: flex;
+  justify-content: flex-start;
+  margin-left: -35px;
+}
 
 header { 
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    position: fixed; /* fixes the header at the top of the page */
-    top: 0; /*assures the header is 'touching' the top border of the page*/
-    left: 0; /*assures the header is 'touching' the left border of the page*/
-    z-index: 100; 
-    width: 100%;
-    height: 32vh;
-    overflow: hidden;
-    background-color: var(--main-bg-color);
-    border-bottom: solid black 0.2rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  top: 0; /*assures the header is 'touching' the top border of the page*/
+  left: 0; /*assures the header is 'touching' the left border of the page*/
+  max-height: inherit;
+  z-index: 100; 
+  background-color: var(--main-bg-color);
+  border-bottom: solid black 0.2rem;
+  width: 100vw;
 }
 
 
-/*-------------------- title --------------------*/
+
+/*----------------------------------------- other selectors -------------------------------------*/
+
+/*----------------------------------------- header ----------------------------------------------*/
+
+#header-wrapper {
+  max-height: 43vh;
+}
+
+
+/*-------------------- title ------------------*/
 
 #title-holder {
-    display: flex;
-    justify-content: center; /*centered flexbox is for centering the title and its border on the y-axis (which is the main axis)*/
-    align-items: center; /*centered flexbox is for centering the title and its border on the cross axis (which is the x-axis)*/
-    border-bottom: solid black 0.05rem;
-    background-color: var(--second-bg-color);
-    height: 21.5%;
+  display: flex;
+  justify-content: center; /*centered flexbox is for centering the title and its border on the y-axis (which is the main axis)*/
+  align-items: center; /*centered flexbox is for centering the title and its border on the cross axis (which is the x-axis)*/
+  border-bottom: solid black 0.05rem;
+  background-color: var(--second-bg-color);
+  height: 8.5vh;
 }
 
 #header-title {
-    display: flex;
-    justify-content: center; /*centered flexbox is for centering the title text inside of its border*/
-    align-items: center;
-    overflow: hidden;
-    font-family: fantasy, monospace;
-    border: solid black;
-    border-radius: 10%;
-    width: 15%;
-    height: 72%;
+  /* display: flex; */
+  /* justify-content: center; centered flexbox is for centering the title text inside of its border */
+  /* align-items: center; */
+  font-family: fantasy, monospace;
+  border: solid black;
+  border-radius: 10%;
+  padding-left: 0.1rem;
 }
 
 
-/*------------ photo and contacts ---------------*/
+/*------------ photo and contacts -------------*/
 
 #photo-and-contacts-holder{    
-    display: flex;
-    justify-content: space-between; /*flexbox is for displaying img and contacts horizontaly inside their parent (that has a column direction)*/
-    height: 68.5%; 
+  display: flex;
+  flex-direction: column;
+  /* justify-content: space-between; flexbox is for displaying img and contacts horizontaly inside their parent (that has a column direction) */
 }
 
 
 /*---- photo ----*/
 
 #photo-holder {
-    display: flex;
-    justify-content: center;
-    width: 50%;
-    height: 100%;
+  display: flex;
+  justify-content: center;
 }
 
 #photo-holder img {
-    border-radius: 75%;
-    border: solid 0.2rem var(--main-details-color);
-    height: 120%;
+  border-radius: 75%;
+  border: solid 0.2rem var(--main-details-color);
+  width: 10rem;
 }
-
-#photo-holder img:hover {height: 117%;}
-
 
 /*---- contacts ----*/
   
-#contacts-holder {    
-    display: flex;
-    flex-direction: column;
-    justify-content: center; /*in order to its child [address] be to centered*/
-    border-left: solid black 0.1rem;
-    overflow: hidden;
-    width: 35%;;
+#contacts-holder ul {
+  list-style-type: none;
+  margin: 0;
 }
 
-#contacts-holder address ul {padding: 0.4% 0 0 0.4%;}
-
-#contacts-holder address ul a { /*for having the links for the contacts and the social media logos being side-by-side*/
-    display: flex;
-    justify-content: left;
-    align-items: center;
-    font-size: large;
-    font-style: normal;
-    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
-    list-style-type: none;
-    padding-bottom: 0.3%;
-    margin: 0;
+#contacts-holder ul li { 
+  font-size: large;
+  font-style: normal;
+  font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+  margin-bottom: 0.1rem;
 }
 
-#contacts-holder address ul li:hover {text-decoration: none; font-weight: bold;}
+#contacts-holder ul li:hover {
+  text-decoration: none; 
+  font-weight: bold;
+}
 
-.contact {padding-left: 0.5%;} /*separates the contacts texts from the icons*/
+.contact-link {
+  display: flex;
+}
 
 .logo {
-    max-width: 5%;
-    border: solid 0.1rem black;
-    border-radius: 30%;
+  border-radius: 30%;
+  max-width: 1.1rem;
+  margin-right: 0.2rem;
 }
 
-#email-icon {
-    max-width: 5%;
+#github-logo { /* for the purpose of putting a border around github-logo and giving it slightly different width and margin-right */
+  border: solid black 0.05rem;
+  border-radius: 30%;
+  max-width: 1.17rem;
+  margin-right: 0.11rem; 
 }
 
-#whatsapp-icon {
-    max-width: 5%;
-}
 
-
-/*----- menu -----*/
+/*- menu (only for desktop version)-*/ 
 
 #menu-holder {
-    display: flex;
-    justify-content: space-around;
-    align-items: center;
-    width: 100%;
-    border-top: solid var(--main-details-color) 0.1rem;
-    background-color: var(--second-bg-color);
-    height: 10%;
+  display: none; /*non-available for mobile version*/ 
+  justify-content: space-around;
+  align-items: center;
+  border-top: solid var(--main-details-color) 0.1rem;
+  background-color: var(--second-bg-color);
 }
 
 #menu-holder ul {
-    display: flex;
-    justify-content: space-around;
-    align-items: center;
-    width: 100%;
-    list-style-type: none;
-    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
-    font-size: large;
-    font-weight: bold;
-    color: var(--main-details-color);
+  /* display: flex; */
+  justify-content: space-around;
+  align-items: center;
+  list-style-type: none;
+  font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+  font-size: large;
+  font-weight: bold;
+  color: var(--main-details-color);
 }
 
-.inner-link:hover {text-shadow: 0.5px 1px 3px #B300B3;} /*----- links targeting contents of the same page -----*/
+.inner-link:hover {text-shadow: 0.5px 1px 1px #B300B3;} /*----- links targeting contents of the same page -----*/
 
 
 
 /*---------------------------------------------main-------------------------------------------------*/
 
 #main-page-wrapper {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    margin: 0;
-    padding: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 
 #content-wrapper {
-    width: 70%;
-    max-width: 70%;
-    margin: 0 auto;
-    padding-top: 30vh;
-    border-left: solid black 0.1rem;
-    border-right: solid black 0.1rem;
-    box-shadow: 5px -10px 8px 5px #3e3e3e;
+  width: 90vw;
+  margin: 0 auto;
+  /* padding-top: 30vh;  maybe, remove this later*/
+  border-left: solid black 0.1rem;
+  border-right: solid black 0.1rem;
+  box-shadow: 5px 5px 8px 1px #3e3e3e; 
 }
 
 main {
-    z-index: 0;
+  z-index: 0;
 }
 
 .div-main {
-    border-top: solid var(--second-details-color) 0.1rem;
-    width: 100%;
-    left: 0;
+  border-top: solid var(--second-details-color) 0.1rem;
+  width: 100%;
+  left: 0;
 }
 
 .div-main:last-of-type {
-    border-top: none ;
-    width: 100%;
+  border-top: none ;
+  width: 100%;
 }
 
 #profile p {
-    padding-left: 2%;    
+  padding-left: 0.5rem;    
+  padding-right: 0.4rem;
+  text-align: justify;
 }
 
-h1, h2 {
-    padding-left: 1%;
+.main-headers {
+  padding-left: 0.2rem;
 }
+
+.sub-headers {
+  padding-left: 0.5rem;
+  font-size: 1.25rem;
+  
+}
+
+/* ul li:not(:first-of-type) {          <--- I do not know why this was here
+  text-align: justify;
+  padding-right: 0.4rem;
+  list-style-type: disc;
+
+} */
+
 
 /*--------------footer-------------*/
 
 .footer-div {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    border-top: solid black 0.2rem;
-    width: 100%;
-    background-color: var(--second-bg-color);
-    border: 1px solid red;
-    left: 0;
-    bottom: 0;
+  border-top: solid black 0.2rem;
+  width: 100%;
+  background-color: var(--second-bg-color);
+  left: 0;
+  bottom: 0;
 }
 
 footer {
-    height: auto;
-    width: 100%;
-    bottom: 0;
-    font-weight: lighter;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  bottom: 0;
+  font-weight: lighter;
+  padding-bottom: 1%;
+  font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
 }
 
-footer a {color: var(--main-details-color);}
+footer p {
+  text-align: center;
+}
 
-footer a:hover {font-weight: bold;}
+footer a {
+  color: var(--main-details-color);
+}
 
-p:not(contact) {font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;}
+footer a:hover {
+  font-weight: bold;
+}
+
+p:not(contact) {
+  font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+}
 
 
 
@@ -244,13 +266,133 @@ a:visited { text-decoration: none;}
 a:active { text-decoration: none;}
 
 
-/*-------------------------------- media-query ------------------------------------------------------*/
 
-@media() {
+/*------------------------------------- media-query (design for desktops) ------------------------------------*/
+
+@media(min-width: 380px) {
+  
+    /*------------------------------------- type selectors ---------------------------------*/
+
+    header {
+      position: fixed;
+      max-height: 35vh; /*so that the header fills 35% of the viewport while the main content fills the other 65%*/
+    }
+
+
+
+    /*------------------------------------ other selectors ---------------------------------*/
+
+    /*------------------------------------------- header -----------------------------------*/
+
+    /* -------------- title -------------- */
+
+    #title-holder {
+      height: 8.4vh; /*24% of its parent - #header-wrapper - height*/
+    }
+
+
+    /* --------- photo and contacts ------ */
+
+    #photo-and-contacts-holder {
+      flex-direction: row;
+      justify-content: space-around;
+      height: 22.5vh; /*approx. 64% of its parent - #header-wrapper - height*/
+    }
+
+
+    /*------- photo ------*/
+
+    #photo-holder {
+      display: flex;
+      width: 30%;
+      padding-left: 12rem;
+    }
+
+    #photo-holder img {
+      height: 11.5rem;
+      width: 11.5rem;
+    }
+
+    #photo-holder img:hover {
+      box-shadow: 2px 2px 2px 2px #B300B3;
+    }
+
+
+    /*------ contacts ---- */
+
+    #contacts-holder {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      border-left: solid black 0.1rem;
+      width: 26vw; /*for the e-mail address to stop moving the left-border due to lack of space*/
+      margin-left: 7rem;
+    }
+
+    #contacts-holder ul {
+      width: inherit;
+      padding-left: 0.2rem;
+      font-size: 1.2rem;
+    }
   
 
+    /*------ menu ----- */
+
+    #menu-holder {
+      display: flex;
+      flex-direction: row;
+      justify-content: space-evenly;
+      align-items: center;
+      height: 4.1vh; /*approx. 12% of its parent - #header-wrapper - height*/
+    }
+
+    #menu-holder ul {
+      display: flex;
+      justify-content: space-around;
+      align-items: center;
+      width: 100vw;
+    }
+
+
+
+    /*----------------------------------- main page --------------------------------------*/
+
+    #content-wrapper {
+      max-width: 70%;
+      margin: 0 auto;
+      padding-top: 35vh;
+      box-shadow: 5px 10px 8px 5px #3e3e3e;
+    }
+     
+    .inner-link:hover {
+      text-shadow: 0.5px 1px 1px #B300B3;  /*----- links targeting contents of the same page -----*/
+    }
 }
 
 
+/* --------menu------ */ 
+  
+
+/* --------does it make sense to drag all the menu-related code to the media-query?------ */ 
 
 
+
+    /* #menu-holder { */
+      /* justify-content: space-around; */
+      /* align-items: center;
+      border-top: solid var(--main-details-color) 0.1rem;
+      background-color: var(--second-bg-color);
+    } */
+  
+    /* #menu-holder ul { */
+      /* display: flex; */
+      /* justify-content: space-around;
+      align-items: center;
+      list-style-type: none;
+      font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+      font-size: large;
+      font-weight: bold;
+      color: var(--main-details-color);
+    }
+   */
+ 
