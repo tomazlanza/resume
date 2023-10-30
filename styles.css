@@ -54,7 +54,6 @@ header {
   max-height: 43vh;
 }
 
-
 /*-------------------- title ------------------*/
 
 #title-holder {
@@ -172,7 +171,7 @@ header {
 #content-wrapper {
   width: 90vw;
   margin: 0 auto;
-  /* padding-top: 30vh;  maybe, remove this later*/
+  padding-top: 30vh;  /* maybe, remove this later*/
   border-left: solid black 0.1rem;
   border-right: solid black 0.1rem;
   box-shadow: 5px 5px 8px 1px #3e3e3e; 
@@ -205,16 +204,49 @@ main {
 
 .sub-headers {
   padding-left: 0.5rem;
-  font-size: 1.25rem;
-  
+  font-size: 1.05rem;
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
 }
 
 /* ul li:not(:first-of-type) {          <--- I do not know why this was here
   text-align: justify;
   padding-right: 0.4rem;
   list-style-type: disc;
-
 } */
+
+.consultant-role-items {
+  padding-left: 1rem;
+}
+
+.space-div {
+  height: 0.1rem; /* Adjust the height as needed */
+  background-color: transparent; /* You can set the background color to match your page background */
+  /* margin: 10px 0; Add margins for spacing */
+  border: none; /* Remove any borders or outlines */
+}
+
+.subtitle-dates {
+  padding-left: 0.5rem;
+  margin-top: -1.05rem ;
+  margin-bottom: -0.4rem;
+}
+
+.negative-margin-li {
+  margin-top: -0.7rem;
+}
+
+.non-bullet-point-li {
+  list-style-type: none;
+  margin-left: -0.75rem;
+}
+
+#unimed-list li:nth-last-child(-n+2),
+#km-list li:nth-last-child(-n+2) {
+ margin-top: -0.15rem;
+ 
+}
+
+
 
 
 /*--------------footer-------------*/
@@ -269,7 +301,7 @@ a:active { text-decoration: none;}
 
 /*------------------------------------- media-query (design for desktops) ------------------------------------*/
 
-@media(min-width: 380px) {
+@media(min-width: 700px) {
   
     /*------------------------------------- type selectors ---------------------------------*/
 
@@ -395,4 +427,3 @@ a:active { text-decoration: none;}
       color: var(--main-details-color);
     }
    */
- 
