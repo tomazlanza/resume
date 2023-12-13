@@ -1,233 +1,457 @@
-/* ------------------------------ CSS variables declarations-------------------------------------*/
+/*------ summary ------*/
+/* (with mostly selectors sorted by order of appearance) */ 
 
+/*-------- DESKTOP VERSION ---------*/
+    /* CSS variables declarations */
+    /* Universal and type selectors */
+    /* other selectors */
+
+  /*-------- MOBILE VERSION ---------*/
+    /* type selectors */
+    /* other selectors */
+
+/* ------------------------------------------ DESKTOP VERSION ------------------------------------------------ */
+/* ------------------------------------------ DESKTOP VERSION ------------------------------------------------ */
+/* ----------------------------------------------------------------------------------------------------------- */
+
+/* ------------------------------ CSS variables declarations-------------------------------------*/
 :root {
-    --main-bg-color: lightgray;
-    --second-bg-color: darkgray;
-    --main-details-color: rgb(128, 0, 128);
-    --second-details-color: rgb(121, 121, 185);
+    --main-bg-color: #313131ff;
+    --third-bg-color: #1e1e1e;
+    --main-details-color: #1f5879;
+    --second-details-color: #a88138 ;
+    --third-details-color: #313131ff;
+    --fourth-details-color: #c7ad7c4a;
+    --fifth-details-color: #efe0c4ec;
+    --text-color: rgb(164, 164, 164);
+    --sub-header-color: rgba(255, 255, 255, 0.858);
 }
 
-
-
 /*--------------------------------- Universal and type selectors --------------------------------*/
-
 * {
   box-sizing: border-box; /*assures every element does not exceed its specified width and height*/
+  color: var(--text-color);
 } 
   
 html {
   scroll-behavior: smooth;
+  height: 100%;
+}
+
+header {
+  position: fixed;
+  width: 100%;
+  z-index: 1;
+}
+
+main {
+  padding: 6.5%;
+  padding-top: 17.5vh;
+  padding-bottom: 0;
+  font-size: 1.3rem;
+}
+
+p {
+  font-family: sans-serif, 'Franklin Gothic Medium', 'Arial Narrow', Arial;
+  line-height: 1.4rlh;
 }
 
 body {
+  display: flex;
+  flex-direction: column;
   background: var(--main-bg-color); 
-  width: 100vw;
-  margin: 0;
+  margin: 0; /* so that the body 'touches' all its screen borders */
+}
+
+h1 {
+  color: #a88138;
+  font-family: sans-serif;
+}
+
+h1:not(#header-title) {
+  margin-bottom: 2rem;
+}
+
+h2 {
+  color: var(--sub-header-color);
 }
 
 address {
-  display: flex;
-  justify-content: flex-start;
-  margin-left: -35px;
+  display: inline-flex;
+  justify-content: space-evenly;
 }
 
-header { 
+address ul {
+  padding-left: 0;
+  display: inline;
+}
+
+footer {
+  border-top: solid 0.01rem var(--second-details-color);
+  background-color: var(--third-bg-color);
   display: flex;
   flex-direction: column;
   justify-content: center;
-  top: 0; /*assures the header is 'touching' the top border of the page*/
-  left: 0; /*assures the header is 'touching' the left border of the page*/
-  max-height: inherit;
-  z-index: 100; 
-  background-color: var(--main-bg-color);
-  /* border-bottom: solid black 0.1rem; */
-  width: 100vw;
+  align-items: center;
+  font-size: 1.2rem;
+  width: 100%;
+  height: 10vh;
+  bottom: 0;
+  font-weight: lighter;
+  font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
 }
 
+footer p {
+  text-align: center;
+  margin: 0;
+  margin-top: 0.5rem;
+}
 
+footer a {
+  padding-top: 0.5rem;
+  color: var(--text-color)
+}
 
 /*----------------------------------------- other selectors -------------------------------------*/
-
 /*----------------------------------------- header ----------------------------------------------*/
-
-#header-wrapper {
-  max-height: 43vh;
-}
-
 /*-------------------- title ------------------*/
 
 #title-holder {
   display: flex;
-  justify-content: center; /*centered flexbox is for centering the title and its border on the y-axis (which is the main axis)*/
-  align-items: center; /*centered flexbox is for centering the title and its border on the cross axis (which is the x-axis)*/
-  background-color: var(--second-bg-color);
-  height: 8.5vh;
+  flex-direction: column;
+  /* justify-content: space-around;
+  align-items: center; */
+  background-color: var(--main-bg-color);
+  margin-bottom: -0.2rem;
+}
+
+#title-sub-holder{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: -2rem;
 }
 
 #header-title {
-  /* display: flex; */
-  /* justify-content: center; centered flexbox is for centering the title text inside of its border */
-  /* align-items: center; */
-  font-family: fantasy, monospace;
-  border: solid black 0.18rem;
-  border-radius: 10%;
   padding-left: 0.1rem;
+  display: inline;
+  letter-spacing: 1px;
 }
 
-
-/*------------ photo and contacts -------------*/
-
-#photo-and-contacts-holder{    
-  display: flex;
-  flex-direction: column;
-  /* justify-content: space-between; flexbox is for displaying img and contacts horizontaly inside their parent (that has a column direction) */
+#second-header-half {
+  display: grid;
+  grid-template-columns: 1.5fr 1.5fr 0.7fr 1fr;
 }
 
+/*------------ links -------------*/
 
-/*---- photo ----*/
+/*---- menu -----*/ 
 
-#photo-holder {
+.inner-link {
+  font-family: sans-serif;
+  font-size: 1.5rem;
+  font-weight: bold;
+  color: var(--main-details-color)
+}
+
+.inner-link:hover { 
+  text-shadow: 0 0 0.5px var(--fifth-details-color),
+  0 0 1px var(--fifth-details-color),
+  0 0 2px var(--fifth-details-color),
+  0 0 4px var(--fifth-details-color);
+  /* 0 0 8px var(--fifth-details-color); */
+  cursor: pointer;
+} 
+
+#links-wrapper {
+  background-color: var(--third-bg-color);
   display: flex;
+  flex-direction: row;
+  align-items: center;
   justify-content: center;
 }
 
-#photo-holder img {
-  border-radius: 75%;
-  border: solid 0.1rem var(--main-details-color);
-  width: 10rem;
+/* ---- dropdown contact menu ---- */
+
+#dropdown-options {
+  color: #939393ff;
+  background-color: var(--main-bg-color);
 }
 
-/*---- contacts ----*/
-  
-#contacts-holder ul {
-  list-style-type: none;
+.contacts-garnish-div-parent {
+  display: flex;
+  flex-direction: column;
+}
+
+.contacts-garnish-div {
+  color: var(--third-details-color);
+  border: solid;
+  display: inline-block;
+  height: 100%; 
+}
+
+.link-to-porfolio {
+  font-weight: bold;
+}
+
+
+/*---- contacts ----*/ 
+#main-menu-holder {
+  width: 100%;
+  display: grid;
+  height: 3rem;
+}
+
+#main-menu-holder ul {
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
   margin: 0;
+  margin-left: -1rem;
+  width: 100%;
 }
 
-#contacts-holder ul li { 
+address ul li { 
   font-size: large;
   font-style: normal;
   font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
   margin-bottom: 0.1rem;
 }
 
-#contacts-holder ul li:hover {
-  text-decoration: none; 
-  font-weight: bold;
+.contact-link img {
+  opacity: 0;
+  animation: fadingOutAndIn ease 6s infinite; 
+  animation-delay: calc(var(--order)*0.15s);
 }
+
+@keyframes fadingOutAndIn {
+  0% {
+    opacity: 0;
+  }
+  40% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 1;
+  }
+}  
 
 .contact-link {
   display: flex;
+  transform: translateY(-200%);
+  animation: fallingLogos ease 1s forwards; 
+  animation-delay: calc(var(--order)*0.15s);
+}
+
+@keyframes fallingLogos {
+  0% {
+    transform: translateY(-200%);
+  }
+  100% {
+    transform: translateY(0);
+  }
+}
+
+#documentation-introduction {
+  font-style: italic;
+  font-size: 1.25rem;
 }
 
 .logo {
   border-radius: 30%;
-  max-width: 1.1rem;
+  max-width: 1.5rem;
   margin-right: 0.2rem;
+  display: inline;
 }
 
-#github-logo { /* for the purpose of putting a border around github-logo and giving it slightly different width and margin-right */
-  border: solid black 0.05rem;
-  border-radius: 30%;
-  max-width: 1.17rem;
-  margin-right: 0.11rem; 
+#github-logo { 
+  max-width: 2.2rem;
+  margin-right: -0.2rem;
+  padding-top: 0.3rem;
+  padding-bottom: 0.3rem;
 }
 
-
-/*- menu (only for desktop version)-*/ 
-
-#menu-holder {
-  display: none; /*non-available for mobile version*/ 
-  justify-content: space-around;
-  align-items: center;
-  /* border-top: solid var(--main-details-color) 0.1rem; */
-  background-color: var(--second-bg-color);
+ul{
+  margin-bottom: 0;
 }
-
-#menu-holder ul {
-  /* display: flex; */
-  justify-content: space-around;
-  align-items: center;
-  list-style-type: none;
-  font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
-  font-size: large;
-  font-weight: bold;
-  color: var(--main-details-color);
-}
-
-.inner-link:hover {text-shadow: 0.5px 1px 1px #B300B3;} /*----- links targeting contents of the same page -----*/
-
-
 
 /*---------------------------------------------main-------------------------------------------------*/
 
-#main-page-wrapper {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-}
 
-#content-wrapper {
-  width: 100vw;
-  margin: 0 auto;
-  padding-top: 30vh;  /* maybe, remove this later*/
-  border-left: solid grey 0.05rem;
-  border-right: solid grey 0.05rem;
-  box-shadow: 5px 5px 8px 1px #3e3e3e; 
-}
-
-main {
-  z-index: 0;
-}
-
-.div-main {
-  border-top: groove var(--second-details-color) 0.1rem;
-  width: 100%;
-  left: 0;
-}
-
-.div-main:last-of-type {
-  border-top: none ;
-  width: 100%;
-}
-
-#profile p {
-  padding-left: 0.5rem;    
-  padding-right: 0.4rem;
+#profile p:not(:nth-of-type(5)) {
+  padding-right: 0.7rem;
   text-align: justify;
 }
 
-.main-headers {
-  padding-left: 0.2rem;
+.self-description-p {
+  margin-right: 0.5%;
+}
+
+/*---- photo ----*/
+.div-with-text-and-image { /*-- this is not working --*/
+  display: grid;
+  grid-template-columns: 4fr 3fr;
+}
+.div-with-text-and-image:nth-of-type(2) { 
+  display: grid; 
+  grid-template-columns: 1fr 1fr;
+}
+.div-with-text{
+  display: flex;
+  flex-direction: column;
+}
+.aligned-with-image-paragraph:nth-of-type(2) {
+  margin-top: 0;
+  margin-bottom: 0.2rem;
+}
+img:not(.logo) {
+  border: solid 0.1rem var(--main-details-color);
+}
+
+#photo {
+  border-radius: 30%;
+  width: 95%;
+  height: 95%;
+  border: none;
+}
+
+#profile .div-with-text-and-image .main-part-image-holder-div {
+  margin-top: -2rem;
+}
+
+.main-part-image-holder-div {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+#main-work-experiences .div-with-text-and-image .main-part-image-holder-div {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: initial;
+}
+#math-and-tech-experiences-image {
+  display: inline;
+  width: 100%;
+  height: max-content;
+  border-radius: 10%;
+  margin-right: 3%;
+  border: none;
+  margin-top: 2rem;
+}
+
+ p.aligned-with-image-paragraph:first-of-type{
+  margin-top: 0;
+}
+
+#key-skills {
+  display: none;
+}
+
+#key-skills::after {
+  content: "";
+  display: inline-block;
+  height: 50px;
+}
+
+.tech-tools-span {
+  transform: 0;
+  display: inline-block;
+}
+
+.link-to-portfolio {
+  text-decoration: underline;
+  font-weight: bold;
+}
+
+#main-work-experiences {
+  display: none;
+}
+
+#main-work-experiences .div-with-text-and-image .div-with-text h2:first-of-type {
+  margin-top: 0;
+ } 
+#main-work-experiences .div-with-text-and-image .div-with-text h2 {
+  margin-bottom: 0.3rem;
+ } 
+#main-work-experiences .div-with-text-and-image .div-with-text h2:not(:first-of-type) {
+  margin-top: 0.5rem;
+ } 
+#main-work-experiences h2 {
+  margin-top: 0.5rem;
+  margin-bottom: 0.3rem;
+ } 
+#main-work-experiences .div-with-text-and-image .div-with-text {
+ padding-right: 1.2rem;
+} 
+#main-work-experiences p:first-of-type {
+  margin-top: 0;
+}
+#main-work-experiences .div-with-text-and-image .main-part-image-holder-div img {
+  margin-right: 0;
+ } 
+ 
+#skills-list p:first-of-type{
+  margin-top: 0;
+}
+
+#key-skills .div-with-text-and-image .main-part-image-holder-div{
+  display: flex;  
+  flex-direction: row;
+  flex-wrap: wrap;
+  padding-top: 2rem;
+}
+
+#unimed-list, #km-list, #ccc-list, #education-list {
+  margin-top: 0;
+  padding-left: 0;  
+}
+
+#unimed-list li {
+  width: 100%;
+}
+
+ul:first-of-type{
+  margin-top: 0;
+  list-style: none;
+}
+
+.tech-stack-logo {
+  display: inline;
+  width: 8rem;
+  height: 7.1rem;
+  transform: translateY(0);
+  box-shadow: initial;
+}
+
+.tech-stack-logo:hover {
+  transform: translateY(-10%);
+}
+
+#skills-list {
+  padding-left: 0;
+  padding-right: 2rem;
+}
+
+#skills-list p:first-of-type{
+  margin-top: 0;
 }
 
 .sub-headers {
-  padding-left: 0.5rem;
-  font-size: 1.05rem;
+  font-size: 1.3rem;
   font-family: Verdana, Geneva, Tahoma, sans-serif;
 }
 
-/* ul li:not(:first-of-type) {          <--- I do not know why this was here
-  text-align: justify;
-  padding-right: 0.4rem;
-  list-style-type: disc;
-} */
-
-.consultant-role-items {
-  padding-left: 1rem;
-}
-
 .space-div {
-  height: 0.1rem; /* Adjust the height as needed */
-  background-color: transparent; /* You can set the background color to match your page background */
-  /* margin: 10px 0; Add margins for spacing */
-  border: none; /* Remove any borders or outlines */
+  height: 0.2rem;
+  background-color: var(--main-bg-color);
+  border: none;
 }
 
 .subtitle-dates {
-  padding-left: 0.5rem;
-  margin-top: -1.05rem ;
-  margin-bottom: -0.4rem;
+  margin-top: 0;
+  margin-bottom: 0.5rem;
 }
 
 .negative-margin-li {
@@ -236,56 +460,30 @@ main {
 
 .non-bullet-point-li {
   list-style-type: none;
-  margin-left: -0.75rem;
+  text-align: justify;
 }
 
 #unimed-list li:nth-last-child(-n+2),
 #km-list li:nth-last-child(-n+2) {
  margin-top: -0.15rem;
- 
 }
 
-
+#unimed-p-outside-div-with-text {
+  width: 80vw;
+}
 
 
 /*--------------footer-------------*/
 
 .footer-div {
-  border-top: solid black 0.01rem;
   width: 100%;
-  background-color: var(--second-bg-color);
   left: 0;
   bottom: 0;
 }
 
-footer {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  width: 100%;
-  bottom: 0;
-  font-weight: lighter;
-  padding-bottom: 1%;
-  font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
-}
-
-footer p {
-  text-align: center;
-}
-
-footer a {
-  color: var(--main-details-color);
-}
-
 footer a:hover {
-  font-weight: bold;
+  text-shadow: 0.2px 0.2px 0.2px var(--sub-header-color);
 }
-
-p:not(contact) {
-  font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
-}
-
 
 
 /*------------------------------- applied to all hyper-links ------------------------------------------------*/
@@ -298,19 +496,28 @@ a:active { text-decoration: none;}
 
 
 
-/*------------------------------------- media-query (design for desktops) ------------------------------------*/
+/*----------------------------------------------------------- MOBILE VERSION ---------------------------------------------------------*/
+/*----------------------------------------------------------- MOBILE VERSION ---------------------------------------------------------*/
+/*----------------------------------------------------------- MOBILE VERSION ---------------------------------------------------------*/
 
-@media(min-width: 700px) {
+@media(max-width: 450px) {
   
     /*------------------------------------- type selectors ---------------------------------*/
 
-    header {
-      position: fixed;
-      max-height: 35vh; /*so that the header fills 35% of the viewport while the main content fills the other 65%*/
+    main, h1, h2, h3, a {
+      font-size: 1rem;
     }
-
-
-
+    
+    footer {
+      font-size: 0.9rem;
+    }
+    
+    address {
+      width: 80vw;
+      display: flex;
+      justify-content: space-around;
+    }
+    
     /*------------------------------------ other selectors ---------------------------------*/
 
     /*------------------------------------------- header -----------------------------------*/
@@ -318,75 +525,92 @@ a:active { text-decoration: none;}
     /* -------------- title -------------- */
 
     #title-holder {
-      height: 8.4vh; /*24% of its parent - #header-wrapper - height*/
+      display: flex;
+      flex-direction: column;
     }
 
-
-    /* --------- photo and contacts ------ */
-
-    #photo-and-contacts-holder {
-      flex-direction: row;
-      justify-content: space-around;
-      height: 22.5vh; /*approx. 64% of its parent - #header-wrapper - height*/
+    #header-title {
+      font-size: 1.75rem;
+      padding-bottom: 1.35rem;
+    }
+    
+    #second-header-half div {
+      display: none;
+    }
+    
+    #second-header-half  {
+      display: flex;
+      justify-content: center;
     }
 
+    .logo {
+      max-width: 1.3rem;
+    }
+
+    #main-menu-holder {
+
+    }
+
+    .main-headers {
+      font-size: 1.3rem;
+    }
+    
+    .sub-headers {
+      font-size: 1.2rem;
+    }
 
     /*------- photo ------*/
-
-    #photo-holder {
-      display: flex;
-      width: 30%;
-      padding-left: 12rem;
-    }
-
+    
     #photo-holder img {
       height: 11.5rem;
       width: 11.5rem;
     }
 
     #photo-holder img:hover {
-      box-shadow: 2px 2px 2px 2px #B300B3;
+      box-shadow: 2px 2px 2px 2px var(--third-details-color);
     }
-
 
     /*------ contacts ---- */
-
-    #contacts-holder {
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      border-left: solid grey 0.1rem;
-      width: 26vw; /*for the e-mail address to stop moving the left-border due to lack of space*/
-      margin-left: 7rem;
-    }
-
-    #contacts-holder ul {
-      width: inherit;
-      padding-left: 0.2rem;
-      font-size: 1.2rem;
+    
+    address ul {
+        padding-left: 0.2rem;
     }
   
-
     /*------ menu ----- */
-
-    #menu-holder {
-      display: flex;
-      flex-direction: row;
-      justify-content: space-evenly;
-      align-items: center;
-      height: 4.1vh; /*approx. 12% of its parent - #header-wrapper - height*/
+  
+    .inner-link {
+      font-size: 1.1rem;
     }
-
-    #menu-holder ul {
-      display: flex;
-      justify-content: space-around;
-      align-items: center;
-      width: 100vw;
-    }
-
-
 
     /*----------------------------------- main page --------------------------------------*/
+
+    #experiences-main-div {
+      display: flex;
+      flex-direction: column;
+      
+
+    }
+
+    #main-work-experiences .div-with-text-and-image .main-part-image-holder-div {
+      align-items: center;
+
+    }
+
+    #profile-main-div {
+      display: flex;
+      flex-direction: column;
+    }
+
+    #photo {
+      width: 75%;
+      margin-top: 2rem;
+    }
+    
+    #math-and-tech-experiences-image {
+      width: 75%;
+      margin-top: 0;
+      margin-bottom: 1rem;
+    }
 
     #content-wrapper {
       max-width: 70%;
@@ -394,35 +618,14 @@ a:active { text-decoration: none;}
       padding-top: 35vh;
       box-shadow: 5px 10px 8px 5px #3e3e3e;
     }
-     
-    .inner-link:hover {
-      text-shadow: 0.5px 1px 1px #B300B3;  /*----- links targeting contents of the same page -----*/
+
+    .tech-stack-logo {
+      width: 5rem;
+      height: 5rem;
+    }
+
+    #python-logo {
+      
     }
 }
 
-
-/* --------menu------ */ 
-  
-
-/* --------does it make sense to drag all the menu-related code to the media-query?------ */ 
-
-
-
-    /* #menu-holder { */
-      /* justify-content: space-around; */
-      /* align-items: center;
-      border-top: solid var(--main-details-color) 0.1rem;
-      background-color: var(--second-bg-color);
-    } */
-  
-    /* #menu-holder ul { */
-      /* display: flex; */
-      /* justify-content: space-around;
-      align-items: center;
-      list-style-type: none;
-      font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
-      font-size: large;
-      font-weight: bold;
-      color: var(--main-details-color);
-    }
-   */
