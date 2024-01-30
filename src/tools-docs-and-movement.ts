@@ -1,28 +1,28 @@
 //// retrieving DOM elements of interest
 
 // paragraph elements 
-let javascriptParagraph: HTMLElement | null = document.getElementById('js-ts-span')
-let reactParagraph: HTMLElement | null = document.getElementById('react-span')
-let nodeParagraph: HTMLElement | null = document.getElementById('node-express-span')
-let sqlParagraph: HTMLElement | null = document.getElementById('my-sql-span')
-let cssParagraph: HTMLElement | null = document.getElementById('css-sass-span')
-let htmlParagraph: HTMLElement | null = document.getElementById('html-span')
-let rPythonParagraph: HTMLElement | null = document.getElementById('r-python-span')
-let vbaParagraph: HTMLElement | null = document.getElementById('vba-span')
+const javascriptParagraph: HTMLElement | null = document.getElementById('js-ts-span')
+const reactParagraph: HTMLElement | null = document.getElementById('react-span')
+const nodeParagraph: HTMLElement | null = document.getElementById('node-express-span')
+const sqlParagraph: HTMLElement | null = document.getElementById('my-sql-span')
+const cssParagraph: HTMLElement | null = document.getElementById('css-sass-span')
+const htmlParagraph: HTMLElement | null = document.getElementById('html-span')
+const rPythonParagraph: HTMLElement | null = document.getElementById('r-python-span')
+const vbaParagraph: HTMLElement | null = document.getElementById('vba-span')
 
 // svg elements
-let javascriptSVG: HTMLElement | null = document.getElementById('javascript-logo')
-let typescriptSVG: HTMLElement | null = document.getElementById('typescript-logo')
-let reactSVG: HTMLElement | null = document.getElementById('react-logo')
-let cssSVG: HTMLElement | null = document.getElementById('css-logo')
-let sassSVG: HTMLElement | null = document.getElementById('sass-logo')
-let htmlSVG: HTMLElement | null = document.getElementById('html-logo')
-let pythonSVG: HTMLElement | null = document.getElementById('python-logo')
-let rSVG: HTMLElement | null = document.getElementById('r-logo')
-let vbaSVG: HTMLElement | null = document.getElementById('vba-logo')
-let sqlSVG: HTMLElement | null = document.getElementById('my-sql-logo')
-let nodeSVG: HTMLElement | null = document.getElementById('node-logo')
-let expressSVG: HTMLElement | null = document.getElementById('express-logo')
+const javascriptSVG: HTMLElement | null = document.getElementById('javascript-logo')
+const typescriptSVG: HTMLElement | null = document.getElementById('typescript-logo')
+const reactSVG: HTMLElement | null = document.getElementById('react-logo')
+const cssSVG: HTMLElement | null = document.getElementById('css-logo')
+const sassSVG: HTMLElement | null = document.getElementById('sass-logo')
+const htmlSVG: HTMLElement | null = document.getElementById('html-logo')
+const pythonSVG: HTMLElement | null = document.getElementById('python-logo')
+const rSVG: HTMLElement | null = document.getElementById('r-logo')
+const vbaSVG: HTMLElement | null = document.getElementById('vba-logo')
+const sqlSVG: HTMLElement | null = document.getElementById('my-sql-logo')
+const nodeSVG: HTMLElement | null = document.getElementById('node-logo')
+const expressSVG: HTMLElement | null = document.getElementById('express-logo')
 
 
 //// creating event handlers functions
@@ -40,7 +40,7 @@ const pointerOverHandler = (
       logo.style.transform = 'translateY(-10%)'
       logo.style.cursor = 'pointer'
     })
-    paragraph.style.transform = 'translateY(-10%)'
+    paragraph.style.scale = '1.03'
     paragraph.style.textShadow = '0 0 2px var(--fourth-details-color), 0 0 4px var(--fourth-details-color), 0 0 8px var(--fourth-details-color), 0 0 16px var(--fourth-details-color), 0 0 32px var(--fourth-details-color)'
   } else {
     return
@@ -63,7 +63,7 @@ const pointerOutHandler = (
       logo.style.transform = 'translateY(0)'
       logo.style.cursor = 'initial'
     })
-    paragraph.style.transform = 'translateY(0)'
+    paragraph.style.scale = '1'
     paragraph.style.textShadow = 'initial'
   } else {
     return

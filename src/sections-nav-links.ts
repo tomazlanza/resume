@@ -13,33 +13,66 @@ let mainExperiencesSection: HTMLElement | null = document.getElementById('main-w
 //creating callback functions
 
 let showProfile = ():void => {
-  if (profileSection && 
-      keySkillsSection && 
-      mainExperiencesSection
+  if ((profileSection && 
+       keySkillsSection && 
+       mainExperiencesSection) &&
+      (profileButton && 
+       keySkillsButton && 
+       mainExperiencesButton)
   ) {
     profileSection.style.display = 'block'
     keySkillsSection.style.display = 'none'
     mainExperiencesSection.style.display = 'none'
+
+    profileSection.className = 'active'
+    keySkillsSection.className = ''
+    mainExperiencesSection.className = ''
+
+    profileButton.className = 'inner-link active-inner-link'
+    keySkillsButton.className = 'inner-link'
+    mainExperiencesButton.className = 'inner-link'
   }
 }
 let showKeySkills = ():void => {
-  if (profileSection && 
-      keySkillsSection && 
-      mainExperiencesSection
+  if ((profileSection && 
+       keySkillsSection && 
+       mainExperiencesSection) &&
+      (profileButton && 
+       keySkillsButton && 
+       mainExperiencesButton)
   ) {
     keySkillsSection.style.display = 'block'
     profileSection.style.display = 'none'
     mainExperiencesSection.style.display = 'none'
+    
+    keySkillsSection.className = 'active'
+    profileSection.className = ''
+    mainExperiencesSection.className = ''
+
+    keySkillsButton.className = 'inner-link  active-inner-link'
+    profileButton.className = 'inner-link'
+    mainExperiencesButton.className = 'inner-link'
   }
 }
 let showMainExperiences = ():void => {
-  if (profileSection && 
-      keySkillsSection && 
-      mainExperiencesSection
+  if ((profileSection && 
+       keySkillsSection && 
+       mainExperiencesSection) &&
+      (profileButton && 
+       keySkillsButton && 
+       mainExperiencesButton)
   ) {
     mainExperiencesSection.style.display = 'block'
     keySkillsSection.style.display = 'none'
     profileSection.style.display = 'none'
+    
+    mainExperiencesSection.className = 'active'
+    keySkillsSection.className = ''
+    profileSection.className = ''
+
+    mainExperiencesButton.className = 'inner-link  active-inner-link'
+    keySkillsButton.className = 'inner-link'
+    profileButton.className = 'inner-link'
   }
 }
 

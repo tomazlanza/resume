@@ -4,13 +4,13 @@
   "description": "",
   "main": "section-nav-links.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
     "start": "tsc --watch"
   },
   "keywords": [],
   "author": "",
   "license": "ISC",
   "dependencies": {
-    "tsc": "^2.0.4"
+    "tsc": "^2.0.4",
+    "typescript": "^5.3.3"
   }
 }

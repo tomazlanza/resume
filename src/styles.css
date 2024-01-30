@@ -252,6 +252,32 @@ address ul li {
   }
 }
 
+.active-inner-link, 
+.active-inner-link:hover {
+  text-shadow: 
+  0 0 1px var(--fifth-details-color),
+  0 0 2px var(--fifth-details-color),
+  0 0 4px var(--fifth-details-color),
+  0 0 8px var(--fifth-details-color);
+}
+
+.active {
+  animation: pageTransition ease forwards;
+  animation-duration: 1.4s;
+}
+
+
+@keyframes pageTransition {
+  0%{
+    opacity: 0;
+    transform: translateY(-5%);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0%);
+  }
+}
+
 #documentation-introduction {
   font-style: italic;
   font-size: 1.25rem;

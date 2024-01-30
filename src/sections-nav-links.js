@@ -1,39 +1,65 @@
-"use strict";
 //// retrieving relevant DOM elements
 //link elements
-let profileButton = document.getElementById('profile-nav-link');
-let keySkillsButton = document.getElementById('key-it-skills-nav-link');
-let mainExperiencesButton = document.getElementById('main-experiences-nav-link');
+var profileButton = document.getElementById('profile-nav-link');
+var keySkillsButton = document.getElementById('key-it-skills-nav-link');
+var mainExperiencesButton = document.getElementById('main-experiences-nav-link');
 //section elements
-let profileSection = document.getElementById('profile');
-let keySkillsSection = document.getElementById('key-skills');
-let mainExperiencesSection = document.getElementById('main-work-experiences');
+var profileSection = document.getElementById('profile');
+var keySkillsSection = document.getElementById('key-skills');
+var mainExperiencesSection = document.getElementById('main-work-experiences');
 //creating callback functions
-let showProfile = () => {
-    if (profileSection &&
+var showProfile = function () {
+    if ((profileSection &&
         keySkillsSection &&
-        mainExperiencesSection) {
+        mainExperiencesSection) &&
+        (profileButton &&
+            keySkillsButton &&
+            mainExperiencesButton)) {
         profileSection.style.display = 'block';
         keySkillsSection.style.display = 'none';
         mainExperiencesSection.style.display = 'none';
+        profileSection.className = 'active';
+        keySkillsSection.className = '';
+        mainExperiencesSection.className = '';
+        profileButton.className = 'inner-link active-inner-link';
+        keySkillsButton.className = 'inner-link';
+        mainExperiencesButton.className = 'inner-link';
     }
 };
-let showKeySkills = () => {
-    if (profileSection &&
+var showKeySkills = function () {
+    if ((profileSection &&
         keySkillsSection &&
-        mainExperiencesSection) {
+        mainExperiencesSection) &&
+        (profileButton &&
+            keySkillsButton &&
+            mainExperiencesButton)) {
         keySkillsSection.style.display = 'block';
         profileSection.style.display = 'none';
         mainExperiencesSection.style.display = 'none';
+        keySkillsSection.className = 'active';
+        profileSection.className = '';
+        mainExperiencesSection.className = '';
+        keySkillsButton.className = 'inner-link  active-inner-link';
+        profileButton.className = 'inner-link';
+        mainExperiencesButton.className = 'inner-link';
     }
 };
-let showMainExperiences = () => {
-    if (profileSection &&
+var showMainExperiences = function () {
+    if ((profileSection &&
         keySkillsSection &&
-        mainExperiencesSection) {
+        mainExperiencesSection) &&
+        (profileButton &&
+            keySkillsButton &&
+            mainExperiencesButton)) {
         mainExperiencesSection.style.display = 'block';
         keySkillsSection.style.display = 'none';
         profileSection.style.display = 'none';
+        mainExperiencesSection.className = 'active';
+        keySkillsSection.className = '';
+        profileSection.className = '';
+        mainExperiencesButton.className = 'inner-link  active-inner-link';
+        keySkillsButton.className = 'inner-link';
+        profileButton.className = 'inner-link';
     }
 };
 // setting event listeners
