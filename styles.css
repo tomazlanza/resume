@@ -10,6 +10,7 @@
     /* type selectors */
     /* other selectors */
 
+
 /* ------------------------------------------ DESKTOP VERSION ------------------------------------------------ */
 /* ------------------------------------------ DESKTOP VERSION ------------------------------------------------ */
 /* ----------------------------------------------------------------------------------------------------------- */
@@ -504,6 +505,7 @@ a:active { text-decoration: none;}
   
     /*------------------------------------- type selectors ---------------------------------*/
 
+
     main, h1, h2, h3, a {
       font-size: 1rem;
     }
@@ -562,9 +564,11 @@ a:active { text-decoration: none;}
     /*------- photo ------*/
     
     #photo-holder img {
+
       height: 11.5rem;
       width: 11.5rem;
     }
+
 
     #photo-holder img:hover {
       box-shadow: 2px 2px 2px 2px var(--third-details-color);
@@ -575,7 +579,6 @@ a:active { text-decoration: none;}
     address ul {
         padding-left: 0.2rem;
     }
-  
     /*------ menu ----- */
   
     .inner-link {
