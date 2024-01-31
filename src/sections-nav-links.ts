@@ -20,6 +20,8 @@ let showProfile = ():void => {
        keySkillsButton && 
        mainExperiencesButton)
   ) {
+    profileSection.className = "active"
+    
     profileSection.style.display = 'block'
     keySkillsSection.style.display = 'none'
     mainExperiencesSection.style.display = 'none'
@@ -41,6 +43,8 @@ let showKeySkills = ():void => {
        keySkillsButton && 
        mainExperiencesButton)
   ) {
+    profileSection.className = "active"
+    
     keySkillsSection.style.display = 'block'
     profileSection.style.display = 'none'
     mainExperiencesSection.style.display = 'none'
@@ -62,6 +66,8 @@ let showMainExperiences = ():void => {
        keySkillsButton && 
        mainExperiencesButton)
   ) {
+    profileSection.className = "active"
+    
     mainExperiencesSection.style.display = 'block'
     keySkillsSection.style.display = 'none'
     profileSection.style.display = 'none'

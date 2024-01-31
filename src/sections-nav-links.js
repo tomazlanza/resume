@@ -15,6 +15,7 @@ var showProfile = function () {
         (profileButton &&
             keySkillsButton &&
             mainExperiencesButton)) {
+        profileSection.className = "active";
         profileSection.style.display = 'block';
         keySkillsSection.style.display = 'none';
         mainExperiencesSection.style.display = 'none';
@@ -33,6 +34,7 @@ var showKeySkills = function () {
         (profileButton &&
             keySkillsButton &&
             mainExperiencesButton)) {
+        profileSection.className = "active";
         keySkillsSection.style.display = 'block';
         profileSection.style.display = 'none';
         mainExperiencesSection.style.display = 'none';
@@ -51,6 +53,7 @@ var showMainExperiences = function () {
         (profileButton &&
             keySkillsButton &&
             mainExperiencesButton)) {
+        profileSection.className = "active";
         mainExperiencesSection.style.display = 'block';
         keySkillsSection.style.display = 'none';
         profileSection.style.display = 'none';
